@@ -1,73 +1,149 @@
-# React + TypeScript + Vite
+# Frontend Candidate Task
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This task evaluates your frontend development skills and software design abilities. You will build a small application that displays user information with weather data for each user's location.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Submission Deadline: 2 days from receiving this task**
 
-## React Compiler
+---
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## Framework Selection
 
-## Expanding the ESLint configuration
+Choose **one** framework:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| Framework | Track | Requirements |
+|-----------|-------|--------------|
+| **Angular** | Standard | Base requirements only |
+| **React** | Advanced | Base + Advanced requirements, TypeScript required |
+| **Vue** | Advanced | Base + Advanced requirements, TypeScript required |
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Base Requirements (All Frameworks)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Route 1: User List (Card View)
+
+Display a list of user cards. Each card must include:
+
+#### User Details
+- Name
+- Gender
+- Profile image
+- Location (city, country)
+- Email
+
+#### Weather Information
+- Weather icon (sunny, cloudy, rainy, etc.)
+- Current temperature
+- Daily lowest temperature
+- Daily highest temperature
+
+---
+
+## Advanced Requirements (React/Vue Only)
+
+Candidates choosing React or Vue must implement the following **in addition to** base requirements.
+
+### State Management (Required)
+
+- **React**: Use Redux Toolkit OR Zustand
+- **Vue**: Use Pinia
+
+All API data must flow through the state management solution.
+
+### Route 2: User Detail Page
+
+Clicking a user card navigates to a detail page displaying:
+
+#### Extended User Information
+- Name
+- Gender
+- Profile image (larger)
+- Location (city, country)
+- Email
+
+#### 7-Day Weather Forecast
+- Date
+- Weather icon
+- High temperature
+- Low temperature
+
+#### Navigation
+- Back button to return to user list
+
+---
+
+## Data Sources
+
+### User API
+
+**Random User API**
+```
+https://randomuser.me/api/?results=10
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Documentation: [https://randomuser.me/documentation](https://randomuser.me/documentation)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Weather API
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+**Open-Meteo API**
+
+Current weather example:
 ```
+https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto
+```
+
+7-day forecast (for React/Vue):
+```
+https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto
+```
+
+Documentation: [https://open-meteo.com/en/docs](https://open-meteo.com/en/docs)
+
+---
+
+## Technical Requirements
+
+| Requirement | Details                                     |
+|-------------|---------------------------------------------|
+| **Responsive Design** | Must work on desktop, tablet, and mobile    |
+| **TypeScript** | Required for React/Vue/Angular              |
+| **Error Handling** | Handle API failures gracefully              |
+| **Loading States** | Show loading indicators during data fetching |
+| **No Authentication** | Not required                                |
+
+---
+
+## Evaluation Criteria
+
+| Criteria | Weight | Description |
+|----------|--------|-------------|
+| **Functionality** | High | All features work correctly |
+| **Code Quality** | High | Clean, readable, well-organized code |
+| **Architecture** | Medium | Proper component structure, separation of concerns |
+| **Responsiveness** | Medium | Works across device sizes |
+| **Error Handling** | Medium | Graceful handling of edge cases and API failures |
+| **TypeScript Usage** | Medium | Proper typing
+| **UI/UX** | Low | Functional design; visual polish is secondary |
+
+**Note**: A working application with basic styling is valued over a polished UI with broken functionality.
+
+---
+
+## Deliverables
+
+Submit the following within **2 days**:
+
+1. **GitHub Repository** - Link to public repository with source code
+2. **Deployed Application** - Link to live, working application
+
+---
+
+## Summary
+
+| Track | Framework | Routes | State Management | TypeScript |
+|-------|-----------|--------|------------------|------------|
+| Standard | Angular | 1 (User List) | Optional | Required |
+| Advanced | React | 2 (List + Detail) | Required | Required |
+| Advanced | Vue | 2 (List + Detail) | Required | Required |
