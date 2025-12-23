@@ -43,12 +43,12 @@ export default function UserCard({ user }: { user: UserType }) {
                 </div>
                 <div className="w-full h-px bg-gray-200 my-2"/>
                 <div className="w-full space-y-3 text-sm text-gray-700">
-                    <div className="flex items-center justify-center gap-2">
+                    <div className="flex items-center justify-center gap-2 flex-wrap">
                         <span className="font-medium">Location:</span>
                         <span>{location.city},</span>
                         <span>{location.country}</span>
                     </div>
-                    <div className="flex items-center justify-center gap-2">
+                    <div className="flex items-center justify-center gap-2 flex-wrap">
                         <span className="font-medium">Email:</span>
                         <span>{email}</span>
                     </div>

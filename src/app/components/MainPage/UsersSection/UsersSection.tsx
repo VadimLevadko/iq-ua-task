@@ -21,7 +21,7 @@ export default function UsersSection({ content }: UserSectionProps) {
     return (
         <section className="all-users-section">
             <div className="container">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {users.map((item: UserType) => <UserCard user={item} key={item.login.uuid} />)}
                 </div>
             </div>
