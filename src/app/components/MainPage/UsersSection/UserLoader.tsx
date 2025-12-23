@@ -1,6 +1,6 @@
 export default function UserLoader() {
     return (
-        <div className="flex items-center justify-center p-4">
+        <div className="user-card-loader flex items-center justify-center p-4">
             <div className="w-full max-w-sm bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center gap-6 animate-pulse">
                 <div className="w-24 h-24 rounded-full bg-gray-300"/>
                 <div className="w-full flex flex-col items-center gap-2">

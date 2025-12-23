@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import type { RootState } from "../store.ts";
+import type { UserType } from "@utils/types";
 
 export const getAllUsers = createAsyncThunk(
     "GET_ALL_USERS",
@@ -10,7 +11,7 @@ export const getAllUsers = createAsyncThunk(
 )
 
 interface UsersState {
-    users: any[];
+    users: UserType[];
     loading: boolean;
     error: string | null;
 }

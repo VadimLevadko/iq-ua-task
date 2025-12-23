@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-export type RootState = ReturnType<typeof store.getState>;
 
 import { usersReducer } from "@features/Users/user-slice";
 import { weatherReducer } from "@features/Weather/weather-slice";
@@ -12,4 +11,5 @@ const store = configureStore({
 });
 
 export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>;
 export default store;

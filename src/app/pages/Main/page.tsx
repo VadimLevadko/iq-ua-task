@@ -7,8 +7,8 @@ export default function MainPage() {
     const allUsers = useSelector(selectAllUsers);
 
     return (
-        <>
+        <main>
             <UsersSection content={allUsers} />
-        </>
+        </main>
     )
 }
