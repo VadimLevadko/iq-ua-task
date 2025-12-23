@@ -17,13 +17,9 @@ export default function Page() {
     const userProfile = useSelector((state: RootState) => id ? selectSingleUser(state, id) : undefined)
     const weekWeather = useSelector((state: RootState) => userProfile?.login?.uuid ? selectWeekWeatherByUUID(state, userProfile.login.uuid) : undefined);
 
+    const isUserExists = userProfile && userProfile.location?.coordinates && userProfile.login?.uuid;
     useEffect(() => {
-        if(
-            userProfile &&
-            userProfile.location?.coordinates &&
-            userProfile.login?.uuid &&
-            !weekWeather
-        ) {
+        if(isUserExists && !weekWeather) {
             dispatch(getWeekWeather({...userProfile.location.coordinates, uuid: userProfile.login.uuid}))
         }
     }, [dispatch, userProfile, weekWeather]);
