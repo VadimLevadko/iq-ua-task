@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectAllUsers } from "@features/Users/user-slice";
+import { selectAllUsers } from "@/store/Users/user-slice";
 
 import UsersSection from "@components/MainPage/UsersSection";
 

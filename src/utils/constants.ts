@@ -1,3 +1,6 @@
+export const API_RANDOM_USER = "https://randomuser.me/api/?results=10"
+export const API_WEATHER = "https://api.open-meteo.com/v1/forecast?"
+
 export const weatherCodeToEmoji: Record<number, string> = {
     0: "☀️",            // Clear sky
     1: "🌤️",            // Mainly clear

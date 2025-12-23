@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 import { useEffect} from "react";
 import { useDispatch } from "react-redux";
-import { getAllUsers } from "@features/Users/user-slice.js";
-import { AppDispatch } from "@features/store";
+import { getAllUsers } from "@/store/Users/user-slice.js";
+import { AppDispatch } from "@/store";
 
 import Header from "@components/Header";
 import MainPage from "@pages/Main/page"

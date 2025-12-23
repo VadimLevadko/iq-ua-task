@@ -2,10 +2,10 @@ import {useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router";
 import { useSelector } from "react-redux";
-import { selectSingleUser } from "@features/Users/user-slice";
-import { getWeekWeather } from "@features/Weather/weather-slice";
-import { selectWeekWeatherByUUID } from "@features/Weather/weather-slice";
-import type { AppDispatch, RootState } from "@features/store";
+import { selectSingleUser } from "@/store/Users/user-slice";
+import { getWeekWeather } from "@/store/Weather/weather-slice";
+import { selectWeekWeatherByUUID } from "@/store/Weather/weather-slice";
+import type { AppDispatch, RootState } from "@/store";
 
 import Error from "@components/commonSections/Error";
 import UserProfileSection from "@components/ProfilePage/UserProfileSection";

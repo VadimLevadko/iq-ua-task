@@ -1,11 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
-import type { RootState } from "../store.ts";
+import type { RootState } from "../index.ts";
 import type { UserType } from "@utils/types";
+import { getAllUsersConst } from "@/store/constants";
+import { API_RANDOM_USER } from "@utils/constants";
 
 export const getAllUsers = createAsyncThunk(
-    "GET_ALL_USERS",
+    getAllUsersConst,
     async () => {
-        const res = await fetch('https://randomuser.me/api/?results=10')
+        const res = await fetch(API_RANDOM_USER)
         return await res.json()
     }
 )

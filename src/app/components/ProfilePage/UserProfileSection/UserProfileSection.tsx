@@ -15,7 +15,7 @@ export default function UserProfileSection({ profile, weather }: ISectionProps) 
     const navigate = useNavigate();
 
     return (
-        <section className="user-profile-section p-4">
+        <section className="user-profile-section container p-4">
             <button
                 onClick={() => navigate('/')}
                 className="mb-4 px-5 py-3 rounded-2xl bg-gradient-to-r from-blue-50 via-white to-purple-50 text-gray-900 text-sm font-semibold shadow-md hover:shadow-lg transition-transform transform hover:scale-105 flex items-center gap-2 cursor-pointer"

@@ -4,7 +4,7 @@ export default function Footer() {
             <div className="absolute -top-16 -left-16 w-64 h-64 bg-blue-200 rounded-full blur-3xl opacity-20 animate-pulse" />
             <div className="absolute -bottom-16 -right-16 w-64 h-64 bg-purple-200 rounded-full blur-3xl opacity-20 animate-pulse" />
             <div className="relative z-10 max-w-6xl mx-auto text-center text-gray-700">
-                <p className="text-sm mb-2">&#169; 2025 Vadim Levadko. All rights reserved.</p>
+                <p className="text-sm mb-2">&copy; 2025 Vadim Levadko. All rights reserved.</p>
                 <p className="text-sm">Designed with ❤️ using React & Tailwind CSS</p>
             </div>
         </footer>

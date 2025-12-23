@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getWeather } from "@features/Weather/weather-slice";
-import { selectWeatherByUUID } from "@features/Weather/weather-slice";
+import { getWeather } from "@/store/Weather/weather-slice";
+import { selectWeatherByUUID } from "@/store/Weather/weather-slice";
 import { weatherCodeToEmoji } from "@utils/constants";
 import { useNavigate } from "react-router";
-import type { AppDispatch, RootState } from "@features/store";
+import type { AppDispatch, RootState } from "@/store";
 import type { UserType } from "@utils/types";
 
 import UserLoader from "@components/MainPage/UsersSection/UserLoader";

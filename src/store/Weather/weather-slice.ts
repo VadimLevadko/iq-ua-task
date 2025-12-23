@@ -1,7 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import { buildWeekWeather } from "@utils/helpers";
-import type { RootState } from "../store.ts";
+import type { RootState } from "../index.ts";
 import type { WeekWeatherType } from "@utils/types";
+import { getWeatherConst, getWeekWeatherConst } from "@/store/constants";
+import { API_WEATHER } from "@utils/constants";
 
 type WeatherData = {
     weatherIconCode: number;
@@ -21,9 +23,9 @@ type WeatherState = {
 };
 
 export const getWeather = createAsyncThunk(
-    "GET_WEATHER",
+    getWeatherConst,
     async({ latitude, longitude, uuid }: { latitude: string, longitude: string, uuid: string }) => {
-        const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto`)
+        const res = await fetch(`${API_WEATHER}latitude=${latitude}&longitude=${longitude}&current_weather=true&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto`)
         const data = await res.json();
 
         return {
@@ -34,9 +36,9 @@ export const getWeather = createAsyncThunk(
 )
 
 export const getWeekWeather = createAsyncThunk(
-    "GET_WEEK_WEATHER",
+    getWeekWeatherConst,
     async({ latitude, longitude, uuid }: { latitude: string, longitude: string, uuid: string }) => {
-        const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto`)
+        const res = await fetch(`${API_WEATHER}latitude=${latitude}&longitude=${longitude}&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto`)
         const data = await res.json();
 
         return {
